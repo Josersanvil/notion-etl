@@ -5,7 +5,7 @@ on:
       - main
   workflow_dispatch:
 
-name: Run Code Linting, type checking and tests
+name: Code quality checks
 
 concurrency:
   group: ${{ github.workflow }}

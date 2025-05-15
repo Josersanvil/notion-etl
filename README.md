@@ -1,8 +1,24 @@
 # Notion ETL
 
+<div align="center">
+  <p>
+    <a href="https://pypi.org/project/notion-etl"><img src="https://img.shields.io/pypi/v/notion-etl.svg" alt="PyPI"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/josersanvil/notion-etl" alt="License"></a>
+    <a href="https://github.com/Josersanvil/notion-etl/actions/workflows/ci-lint-tests.yaml"><img src="https://github.com/Josersanvil/notion-etl/actions/workflows/ci-lint-tests.yaml/badge.svg" alt="Code Quality check"></a>
+  </p>
+</div>
+
 A Python package for extracting, transforming, and loading data from Notion using Polars DataFrames and the Notion API Client.
 
 The package provides a simple API for loading raw and clean data from Notion databases into Polars DataFrames, allowing for efficient data manipulation and analysis.
+
+- [Notion ETL](#notion-etl)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Authentication](#authentication)
+    - [Loading Data from a Notion Database](#loading-data-from-a-notion-database)
+    - [Loading Data from a Notion Page](#loading-data-from-a-notion-page)
+  - [Contributing](#contributing)
 
 ## Installation
 
@@ -64,4 +80,26 @@ page = loader.get_page_contents("page_id")
 print(page.as_plain_text()) # Print the page content as plain text
 print(page.as_markdown()) # Print the page content as markdown
 page.as_dataframe() # Convert to Polars DataFrame, every block in the page is a row in the DataFrame
+```
+
+## Contributing
+
+You can install the package using [uv](https://docs.astral.sh/uv/)
+
+First install `uv` with:
+
+```bash
+pip install uv
+```
+
+Then create the environment with:
+
+```bash
+uv sync
+```
+
+You can activate the virtual environment with `source venv/bin/activate` or you can run commands with `uv run`. For example:
+
+```bash
+uv run pytest tests
 ```
