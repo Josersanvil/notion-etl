@@ -10,10 +10,6 @@ name: Run Code Linting, type checking and tests
 concurrency:
   group: ${{ github.workflow }}
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   publish:
     runs-on: ubuntu-latest
