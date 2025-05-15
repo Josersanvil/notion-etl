@@ -1,0 +1,123 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Bearer secret_...
+      connection:
+      - keep-alive
+      host:
+      - api.notion.com
+      notion-version:
+      - '2022-06-28'
+    method: GET
+    uri: https://api.notion.com/v1/blocks/1eaff0a4-106e-8024-a1b0-eac74b216928/children
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-Ray:
+      - 93b1683d19d1fba5-AMS
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 05 May 2025 15:52:49 GMT
+      ETag:
+      - W/"649a-Gc8OLeKxQI/onMQL1095yOZOzOM"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=vtYMjkRmMcWj2P0gyTmSS.iqf6ZSw_RvSTwtaTJ9Zgg-1746460369-1.0.1.1-kUCukATQFKMdBWBUYl1syQDuJoe7w.biL_yulAhQQ9V4Uqx7IqQpn09WZgkOO6qhYSV_wTQTJYINwj6mddQCUPo5oNa.BnfIVQGqYs3ypLY;
+        path=/; expires=Mon, 05-May-25 16:22:49 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=TZR.OW6pLlQvzFMrEY84MWbhbeGHOphtfgoAd5H69b0-1746460369909-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - 6e27ca3a-e3c0-43bc-b38d-572550ba8664
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

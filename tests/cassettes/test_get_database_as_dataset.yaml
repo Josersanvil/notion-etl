@@ -1,0 +1,100 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Bearer secret_...
+      connection:
+      - keep-alive
+      content-length:
+      - '2'
+      content-type:
+      - application/json
+      host:
+      - api.notion.com
+      notion-version:
+      - '2022-06-28'
+    method: POST
+    uri: https://api.notion.com/v1/databases/1eaff0a4106e800f808dfe8b13ae6b9e/query
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+2Y247bNhCGX0VgEaAFxISkqOPdptvjRdCLAAEaBMaQGtnK0qJLUessFn6E3rQP
+        kBfpQ+URCmp9Dtqsmw3goAEM2JQ0v/4ZDj8SviVWvUbtSUVM23sSE4f9YHxPqpe3u3sLmCKJSVuT
+        inCEpmEgKWcZ0oI1nCoGjKIopCpzWYASJCbaIXisJ76dI6mIYCKlLHyec1ExXjH2mDH2K4mJgd5P
+        sG7/8Wkh957e6KobUu05HHp0G4c6Y5nMuKQ8bwoqZVlTxWtNBS+VTlAIVkiyOnzxA8hpe42OVN1g
+        TExabbvN7wU47HzQ9zeLkF4NHhT0OGlrEh+M3i8va2jBipo2WCieAGaqxPA2cHrWXmNNqgZMjzFp
+        u4l30M+2FxbOLtD5Fvvw6kvstWsXvg2+bu8yu3z6KL98lH5H4o0z1+rZxOObsRO2v0MvrB9Y37u7
+        fEu07fyYG7mIQpO4aNn6mR185GHax1E/s4OpI4e9NdcYeRvhfOFvxrvRHG5UaCvTdld3tQp5dZ31
+        EGyOtpU1eyl6MK3eDnvv2iv0M2eH6S7toavRmbbD7RVt6/2BsS7MATYwGB9KuTAQijem9DF5zBw2
+        6zxerWLyHKb9ttTf9xeXuzLPB+PbSY8mdFt8OKxehuBnEBbCOti33uAuejscv+8zOc/sOquvxLnV
+        +9DaQQlXMRmcIRWZeb/oqydPlsvl484Gr497++SZpWMkFXSzaMKaCUQKQDri0WJQptWTQ8HXtkfX
+        Q3fdmq1w6/Ek6VV8T1DmioJKcqpToUSSljqrPwBKXqXFKaA8wOoXUJ4nKH8eeh9BtEkmws67my1u
+        IFq30Fkt0nt6figArkNAJpozANoUKVCJkFPAEinjkGpgoJhgJCbdiEry3ME1mujd2z9/J7uMpg6x
+        I6uHR+ovBrqu7aZRY13kXbuIvt6g7Jtzm74PeD0Fuhsp2lhHgxTdsvKQlLkKsDti3UkQ/phX3RvK
+        QlLgilEEnUsleFaK4oNQzu8P5aSSny2Ut4sA5/Z1S+L1d0Xevf3jr7HJ/g+8voiUsdNoYXu/PqmA
+        Gg+GM4w6XEboILJN5HBuPUZL667abnpuBPivSTw00blmMmlyqvO8pFJnNS0UE5SrhstSF2Upmh3R
+        nxo73UO5ddBNcVzadw2lk6SUwKjijaAyUyUFLmrKgKuScZmVKt+J/YDdxU97ag7rPSnOmQxGZJEy
+        KguR0xKgoCUXRVFAU4OAndQL666oaRvck1NmwE+xzTzdTtv5Hd2PvJ2yjYRQGkLfO2ELGXh8hOOT
+        9o2TtO+9UUBNiyYH2shGpTXDBMbDx4NtFF9O75/JbrCPzxkaYwMuTX1ui/PfjD4w1TEvIVEyp7pJ
+        ciqZ0FTVHGktOeN502hRqB09v7XzxeDvtpdNEjfB3nLH44yhQiwymqaoqAxiRV0ChbIsm7LQdcr4
+        HtodYhDs9xQXYS4+AY9/HAv54hxn/NDaKTQeI+kYeURMqAP0jph3Eo1P0l69ikmHb/xED663W8rM
+        oJ/MrduVYj1LocMn1k02aAneji9Vt6vwp/ZvA/b+Dj3IUXDINFUFT6iEHKgqUkkRk1zUSZ6lvCCr
+        vwHI+I99GhcAAA==
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-Ray:
+      - 93b168318e9e9fd8-AMS
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 05 May 2025 15:52:47 GMT
+      ETag:
+      - W/"171a-w3Ym0UCWpys7bakz4BJidk4pzNQ"
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=7zcH7uXGr9McpE1SIbkRFeidLTDONVvFXdZwBWFTCW0-1746460367-1.0.1.1-ethFen77b6bO5VexgcAYQrK3wkVs2XTBN0xWkZztsGpL7_neiVNtmXDVmsBU2ozZoK1Nyln_4BdPfybRRbFRhumpKl6zFTkiDCWl6hFjgN8;
+        path=/; expires=Mon, 05-May-25 16:22:47 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=5GGVA28tTD1o25b9AAY3wn0utEILtxFfQqC2ODmonog-1746460367892-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      alt-svc:
+      - h3=":443"; ma=86400
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - e1e21a6c-b813-4a7a-b854-ee372d376518
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1
