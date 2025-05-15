@@ -8,7 +8,6 @@ from notion_etl.page import NotionPageContents
 
 
 class NotionDataLoader:
-
     def __init__(self, notion_token: Optional[str] = None):
         """
         Initialize the NotionDataClient class.

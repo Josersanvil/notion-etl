@@ -6,6 +6,8 @@ The package provides a simple API for loading raw and clean data from Notion dat
 
 ## Installation
 
+The package is [available on PyPI](https://pypi.org/project/notion-etl/) and can be installed using pip:
+
 ```bash
 pip install notion-etl
 ```
@@ -14,7 +16,10 @@ pip install notion-etl
 
 ### Authentication
 
-Set your Notion API key as an environment variable:
+Create a Notion integration and get your Notion API key. You can find instructions on how to do this in the [Notion API documentation](https://developers.notion.com/docs/getting-started).
+Remember to share the pages and databases you want to access with your integration.
+
+To authenticate, set your Notion API key as an environment variable:
 
 ```bash
 export NOTION_TOKEN=secret_...
@@ -31,6 +36,10 @@ loader = NotionDataLoader(os.environ["NOTION_TOKEN"])
 
 ### Loading Data from a Notion Database
 
+Use the `NotionDataLoader` class to load data from a Notion database. The `get_database` method retrieves the database and its records.
+
+The database id can be found in the URL of the database page. For example, in the URL `https://www.notion.so/your_workspace/Database-Name-1234567890abcdef1234567890abcdef`, the database id is `1234567890abcdef1234567890abcdef`.
+
 ```python
 from notion_etl.loader import NotionDataLoader
 
@@ -39,4 +48,20 @@ database = loader.get_database("database_id")
 database.records # List of records in the database
 database.to_dataframe() # Convert to clean Polars DataFrame
 database.to_dataframe(clean=False) # Convert to raw Polars DataFrame
+```
+
+### Loading Data from a Notion Page
+
+For loading data from a Notion page, use the `get_page_contents` method. The results of a page can be converted to a Polars DataFrame, plain text, or markdown.
+
+Same as with the database, the page id can be found in the URL of the page. For example, in the URL `https://www.notion.so/your_workspace/Page-Name-1234567890abcdef1234567890abcdef`, the page id is `1234567890abcdef1234567890abcdef`.
+
+```python
+from notion_etl.loader import NotionDataLoader
+
+loader = NotionDataLoader()
+page = loader.get_page_contents("page_id")
+print(page.as_plain_text()) # Print the page content as plain text
+print(page.as_markdown()) # Print the page content as markdown
+page.as_dataframe() # Convert to Polars DataFrame, every block in the page is a row in the DataFrame
 ```
