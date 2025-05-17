@@ -11,7 +11,7 @@ concurrency:
   group: ${{ github.workflow }}
 
 jobs:
-  publish:
+  ci-checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
