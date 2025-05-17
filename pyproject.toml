@@ -36,10 +36,10 @@ source = "uv-dynamic-versioning"
 allow-direct-references = true
 
 [tool.hatch.build.targets.sdist]
-include = ["notion_etl/**", "README.md", "LICENSE"]
+include = ["notion_etl/**", "README.md", "LICENSE", "py.typed"]
 
 [tool.hatch.build.targets.wheel]
-include = ["notion_etl/**", "README.md", "LICENSE"]
+include = ["notion_etl/**", "README.md", "LICENSE", "py.typed"]
 
 [tool.uv-dynamic-versioning]
 fallback-version = "0.0.0"
