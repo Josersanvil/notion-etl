@@ -24,13 +24,14 @@ def test_get_simple_database_as_df(notion_loader, database_ids: dict[str, str]):
         "Description": pl.Utf8,
         "Tags": pl.List(pl.Utf8),
         "Name": pl.Utf8,
+        "Notes": pl.Utf8,
         "_page_id": pl.Utf8,
         "_page_url": pl.Utf8,
         "_page_public_url": pl.Utf8,
         "_created_at": pl.Datetime(),
         "_last_edited_at": pl.Datetime(),
     }
-    assert df.shape == (4, 8)
+    assert df.shape == (4, 9)
     assert dict(df.schema) == expected_schema
 
 
