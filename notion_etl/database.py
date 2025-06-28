@@ -126,6 +126,7 @@ class NotionDataset:
                 self._pl_get_col_value(
                     col_name,
                     col_data["value"],
+                    cleaned_df,
                     alias=col_data["colname"],
                 )
                 for col_name, col_data in df_cols_data.items()
@@ -138,21 +139,21 @@ class NotionDataset:
         )
 
     def _get_properties_col_field(
-        self,
-        field_name: str,
-    ) -> pl.Expr:
+        self, field_name: str, properties_col: pl.Series
+    ) -> pl.Series:
         """
         Get the field object that is inside the properties column
         of type 'struct' of the DataFrame.
         """
-        return pl.col(self.properties_col).struct.field(field_name)
+        return properties_col.struct.field(field_name)
 
     def _pl_get_col_value(
         self,
         col_name: str,
         col_type: str,
+        cleaned_df: pl.DataFrame,
         alias: Optional[str] = None,
-    ) -> pl.Expr:
+    ) -> pl.Series | pl.Expr:
         """
         Get the Polars expression for a column value based on
         the column name and type as returned by the Notion API.
@@ -160,19 +161,31 @@ class NotionDataset:
         if not alias:
             alias = col_name
         col = (
-            self._get_properties_col_field(col_name)
+            self._get_properties_col_field(col_name, cleaned_df[self.properties_col])
             if self.properties_col
-            else pl.col(col_name)
+            else cleaned_df[col_name]
         )
+        col_schema = dict(col.struct.schema)
         col_struct = col.struct.field(col_type)
+        col_schema_type = col_schema[col_type]
+        col_value: pl.Expr | pl.Series = pl.lit(None)
         match col_type:
             case "rich_text" | "title":
-                col_value = (
-                    col_struct.list.get(0, null_on_oob=True)
-                    .struct.field("text")
-                    .struct.field("content")
-                    .cast(_pl_dtypes[col_type])
-                )
+                if col_schema_type.is_(pl.List(pl.Null)):
+                    col_value = col_value.cast(_pl_dtypes[col_type])
+                else:
+                    col_value = col_struct.list.get(0, null_on_oob=True)
+                    col_value = (
+                        pl.when(col_value.is_null())
+                        .then(pl.lit(None))
+                        .otherwise(
+                            (
+                                col_value.struct.field("text")
+                                .struct.field("content")
+                                .cast(_pl_dtypes[col_type])
+                            )
+                        )
+                    )
             case "number" | "checkbox":
                 col_value = col_struct.cast(_pl_dtypes[col_type])
             case "select":
